@@ -1,0 +1,28 @@
+{
+ "bolero": {
+  "n_songs": 262,
+  "pairwise_acc": 0.716,
+  "pairwise_ci": [
+   0.694,
+   0.74
+  ],
+  "sup_auc": 0.713,
+  "sup_ci": [
+   0.675,
+   0.747
+  ]
+ },
+ "vpop": {
+  "n_songs": 316,
+  "pairwise_acc": 0.507,
+  "pairwise_ci": [
+   0.484,
+   0.53
+  ],
+  "sup_auc": 0.763,
+  "sup_ci": [
+   0.734,
+   0.791
+  ]
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "song": {
+  "n_groups": 577,
+  "largest": 2
+ },
+ "composer": {
+  "n_groups": 366,
+  "largest": 21
+ },
+ "strict": {
+  "n_groups": 266,
+  "largest": 139
+ },
+ "dup_pairs": {
+  "title": 2,
+  "lyrics": 5
+ },
+ "songs_in_dup_clusters": 12,
+ "no_composer": 0,
+ "dup_cluster_label_mix": {
+  "(('bolero', 2),)": 6
+ }
+}

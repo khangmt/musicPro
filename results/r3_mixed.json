@@ -1,0 +1,56 @@
+{
+ "mixed_vb": {
+  "Intercept": {
+   "coef": 0.665,
+   "sd": 0.006
+  },
+  "change": {
+   "coef": 0.045,
+   "sd": 0.014
+  },
+  "bolero": {
+   "coef": 0.124,
+   "sd": 0.01
+  },
+  "change:bolero": {
+   "coef": 0.298,
+   "sd": 0.021
+  },
+  "isfinal": {
+   "coef": 0.966,
+   "sd": 0.021
+  },
+  "isfirst": {
+   "coef": -0.267,
+   "sd": 0.018
+  },
+  "relpos": {
+   "coef": -0.48,
+   "sd": 0.011
+  },
+  "line_len": {
+   "coef": 0.005,
+   "sd": 0.001
+  },
+  "log_seg_len": {
+   "coef": 0.009,
+   "sd": 0.004
+  },
+  "minor": {
+   "coef": 0.044,
+   "sd": 0.007
+  },
+  "rel_line": {
+   "coef": -0.051,
+   "sd": 0.011
+  },
+  "song_final_line": {
+   "coef": 0.057,
+   "sd": 0.03
+  }
+ },
+ "mixed_vb_re_sd": {
+  "song": 0.025,
+  "composer": 0.17
+ }
+}

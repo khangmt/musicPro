@@ -1,0 +1,222 @@
+{
+ "composer": {
+  "models": {
+   "M9 phobert": {
+    "auc": 0.961,
+    "auc_5seeds": [
+     0.96,
+     0.002
+    ]
+   },
+   "P+chord": {
+    "auc": 0.976,
+    "auc_5seeds": [
+     0.976,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0153,
+     0.0099,
+     0.022
+    ]
+   },
+   "P+tone": {
+    "auc": 0.961,
+    "auc_5seeds": [
+     0.961,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0004,
+     -0.0014,
+     0.0021
+    ]
+   },
+   "P+poetic": {
+    "auc": 0.962,
+    "auc_5seeds": [
+     0.962,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0012,
+     0.0,
+     0.0027
+    ]
+   },
+   "P+align": {
+    "auc": 0.961,
+    "auc_5seeds": [
+     0.961,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0006,
+     -0.0008,
+     0.0019
+    ]
+   },
+   "P+chord+tone": {
+    "auc": 0.976,
+    "auc_5seeds": [
+     0.976,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0151,
+     0.0095,
+     0.0219
+    ]
+   },
+   "M10 phobert+all": {
+    "auc": 0.976,
+    "auc_5seeds": [
+     0.976,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0158,
+     0.0094,
+     0.0231
+    ]
+   }
+  },
+  "folds_seed1": [
+   {
+    "n": 117,
+    "bolero_share": 0.453,
+    "groups": 73
+   },
+   {
+    "n": 115,
+    "bolero_share": 0.452,
+    "groups": 74
+   },
+   {
+    "n": 116,
+    "bolero_share": 0.457,
+    "groups": 71
+   },
+   {
+    "n": 120,
+    "bolero_share": 0.458,
+    "groups": 71
+   },
+   {
+    "n": 115,
+    "bolero_share": 0.452,
+    "groups": 73
+   }
+  ]
+ },
+ "strict": {
+  "models": {
+   "M9 phobert": {
+    "auc": 0.953,
+    "auc_5seeds": [
+     0.951,
+     0.002
+    ]
+   },
+   "P+chord": {
+    "auc": 0.972,
+    "auc_5seeds": [
+     0.97,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0191,
+     0.011,
+     0.0257
+    ]
+   },
+   "P+tone": {
+    "auc": 0.952,
+    "auc_5seeds": [
+     0.952,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     -0.0005,
+     -0.0033,
+     0.0016
+    ]
+   },
+   "P+poetic": {
+    "auc": 0.954,
+    "auc_5seeds": [
+     0.953,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0014,
+     -0.0,
+     0.0028
+    ]
+   },
+   "P+align": {
+    "auc": 0.953,
+    "auc_5seeds": [
+     0.952,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0003,
+     -0.0011,
+     0.0018
+    ]
+   },
+   "P+chord+tone": {
+    "auc": 0.971,
+    "auc_5seeds": [
+     0.97,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0181,
+     0.0093,
+     0.025
+    ]
+   },
+   "M10 phobert+all": {
+    "auc": 0.971,
+    "auc_5seeds": [
+     0.97,
+     0.002
+    ],
+    "gain_vs_phobert": [
+     0.0183,
+     0.0095,
+     0.0255
+    ]
+   }
+  },
+  "folds_seed1": [
+   {
+    "n": 175,
+    "bolero_share": 0.64,
+    "groups": 31
+   },
+   {
+    "n": 101,
+    "bolero_share": 0.376,
+    "groups": 57
+   },
+   {
+    "n": 101,
+    "bolero_share": 0.376,
+    "groups": 58
+   },
+   {
+    "n": 104,
+    "bolero_share": 0.375,
+    "groups": 60
+   },
+   {
+    "n": 102,
+    "bolero_share": 0.373,
+    "groups": 60
+   }
+  ]
+ }
+}

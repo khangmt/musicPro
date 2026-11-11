@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage[T5]{fontenc}\usepackage[utf8]{inputenc}
+\usepackage{booktabs,amsmath,float}
+\title{Supplementary Material\\[4pt]\large Interpretable Multimodal Analysis of Lexical Tone--Chord Alignment in Vietnamese Music}
+\date{}
+\begin{document}\maketitle
+\noindent This supplement gives the full model output behind the main paper. All models use the 583 listing-only chord sheets (symbolic analyses) or the 88 aligned recordings (audio analyses) described there. GEE models use a logit link, exchangeable working correlation and robust sandwich standard errors, clustered by song.
+\renewcommand{\thetable}{S\arabic{table}}
+\section*{S1. Full coefficients of the extended GEE model (Eq.~4)}
+Outcome: syllable carries a level tone. Change and bolero are 0/1 indicators (reference: V-pop, no chord change). Continuous controls are as defined in the paper.
+\begin{table}[H]\centering\caption{Extended GEE model: log-odds coefficients.}
+\begin{tabular}{lrrrr}\toprule Term & $\beta$ & SE & $p$ & $e^{\beta}$\\\midrule
+Intercept & 0.650 & 0.045 & $5.2\times10^{-47}$ & 1.92\\
+Chord change & 0.045 & 0.031 & 0.15 & 1.05\\
+Bolero & 0.130 & 0.023 & $1.3\times10^{-8}$ & 1.14\\
+Chord change $\times$ bolero & 0.295 & 0.047 & $5.4\times10^{-10}$ & 1.34\\
+Line-final syllable & 0.958 & 0.040 & $3.0\times10^{-125}$ & 2.61\\
+Line-initial syllable & -0.265 & 0.034 & $1.3\times10^{-14}$ & 0.77\\
+Relative position in line & -0.476 & 0.036 & $6.6\times10^{-41}$ & 0.62\\
+Line length (syllables) & 0.006 & 0.002 & 0.020 & 1.01\\
+log chord-segment length & 0.009 & 0.018 & 0.62 & 1.01\\
+Minor key & 0.049 & 0.025 & 0.049 & 1.05\\
+Relative line position in song & -0.050 & 0.023 & 0.027 & 0.95\\
+Song-final line & 0.055 & 0.028 & 0.053 & 1.06\\
+\bottomrule\end{tabular}\end{table}
+Derived odds ratios of a level tone at a chord change: V-pop $e^{\beta_1}$ = 1.05 [0.98, 1.11]; bolero $e^{\beta_1+\beta_3}$ = 1.40 [1.30, 1.51]; ratio $e^{\beta_3}$ = 1.34 [1.22, 1.47].
+\section*{S2. Six-tone and register models}
+Line-internal GEE of chord change on tone representation, with relative position and line length as controls, fitted per genre. Lower QIC is better.
+\begin{table}[H]\centering\caption{Model comparison by QIC.}
+\begin{tabular}{lrr}\toprule Tone representation & Bolero & V-pop\\\midrule
+Poetic class (level/sharp) & 37{,}267 & 47{,}873\\
+Register (high/low) & 37{,}447 & 47{,}360\\
+Class + register & 37{,}265 & 47{,}361\\
+Six tones & 37{,}237 & 47{,}298\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\caption{Six-tone odds ratios of a chord change (reference: \emph{ngang}); $p$ raw and Holm-adjusted significance over the ten tests.}
+\begin{tabular}{lrrcrrc}\toprule & \multicolumn{3}{c}{Bolero} & \multicolumn{3}{c}{V-pop}\\ Tone & OR & $p$ & Holm & OR & $p$ & Holm\\\midrule
+\emph{huyền} & 1.00 & 0.99 & no & 0.62 & $1.5\times10^{-23}$ & yes\\
+\emph{sắc} & 0.77 & $3.6\times10^{-6}$ & yes & 1.16 & 0.001 & yes\\
+\emph{hỏi} & 0.52 & $1.9\times10^{-8}$ & yes & 0.53 & $3.6\times10^{-17}$ & yes\\
+\emph{ngã} & 0.56 & $3.3\times10^{-10}$ & yes & 0.78 & $3.2\times10^{-5}$ & yes\\
+\emph{nặng} & 0.63 & $5.2\times10^{-10}$ & yes & 0.51 & $2.4\times10^{-28}$ & yes\\
+\bottomrule\end{tabular}\end{table}
+Wald tests. Bolero: \emph{huyền} = \emph{ngang} $p=0.99$; four sharp tones equal $p=1.2\times10^{-5}$; all within-class equalities $\chi^2_4=26.0$, $p=3.2\times10^{-5}$. V-pop: $\chi^2_4=249.0$, $p=1.1\times10^{-52}$. Level-minus-sharp log-odds: bolero 0.485 ($p=5.8\times10^{-20}$), V-pop 0.113 ($p=0.004$). In the class + register model, V-pop high register OR 1.77, level class OR 1.00; bolero high register OR 1.05, level class OR 1.47.
+\section*{S3. \emph{Lục bát} line types}
+Extended GEE with a change $\times$ genre $\times$ couplet-line interaction (couplet line: a 6- or 8-syllable line in a 6--8 pair). Couplet lines hold 2.8\% of bolero and 2.3\% of V-pop syllables.
+\begin{table}[H]\centering\caption{Chord-change odds ratios by line type.}
+\begin{tabular}{lrl}\toprule Quantity & OR [95\% CI] & $p$\\\midrule
+Bolero change, couplet lines & 1.45 [1.16, 1.82] & 0.001\\
+Bolero change, other lines & 1.40 [1.30, 1.51] & $3.0\times10^{-18}$\\
+V-pop change, couplet lines & 1.22 [0.93, 1.60] & 0.14\\
+V-pop change, other lines & 1.04 [0.98, 1.11] & 0.19\\
+Change $\times$ bolero, couplet lines & 1.19 [0.84, 1.69] & 0.34\\
+Change $\times$ bolero, other lines & 1.35 [1.23, 1.48] & $5.8\times10^{-10}$\\
+Change $\times$ bolero $\times$ couplet & 0.88 [0.62, 1.26] & 0.49\\
+\bottomrule\end{tabular}\end{table}
+Song-level \emph{lục bát} conformity (standardised; 50 songs with enough couplets): change $\times$ conformity $\beta=0.059$ ($p=0.52$); change $\times$ bolero $\times$ conformity $\beta=-0.013$ ($p=0.91$).
+\section*{S4. Genre classification: PhoBERT plus each feature group}
+Logistic regression (balanced class weights; $C=0.05$ with PhoBERT), standardisation fitted within training folds, 5-fold stratified group CV, mean ROC AUC over 5 seeds; gain over PhoBERT with 95\% bootstrap CI over songs.
+\begin{table}[H]\centering\caption{ROC AUC and gain over PhoBERT.}
+\begin{tabular}{lcccc}\toprule & \multicolumn{2}{c}{Composer groups} & \multicolumn{2}{c}{Strict groups}\\ Model & AUC & Gain [95\% CI] & AUC & Gain [95\% CI]\\\midrule
+PhoBERT & 0.960 & -- & 0.951 & --\\
++ chord & 0.976 & +0.015 [0.010, 0.022] & 0.970 & +0.019 [0.011, 0.026]\\
++ tone & 0.961 & +0.000 [-0.001, 0.002] & 0.952 & -0.001 [-0.003, 0.002]\\
++ poetic & 0.962 & +0.001 [0.000, 0.003] & 0.953 & +0.001 [0.000, 0.003]\\
++ alignment & 0.961 & +0.001 [-0.001, 0.002] & 0.952 & +0.000 [-0.001, 0.002]\\
++ chord + tone & 0.976 & +0.015 [0.009, 0.022] & 0.970 & +0.018 [0.009, 0.025]\\
++ all features & 0.976 & +0.016 [0.009, 0.023] & 0.970 & +0.018 [0.009, 0.025]\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\caption{Fold composition (seed 1): songs / bolero share / groups.}\small
+\begin{tabular}{lccccc}\toprule Scheme & Fold 1 & Fold 2 & Fold 3 & Fold 4 & Fold 5\\\midrule
+Composer & 117 / 45\% / 73 & 115 / 45\% / 74 & 116 / 46\% / 71 & 120 / 46\% / 71 & 115 / 45\% / 73\\
+Strict & 175 / 64\% / 31 & 101 / 38\% / 57 & 101 / 38\% / 58 & 104 / 38\% / 60 & 102 / 37\% / 60\\
+\bottomrule\end{tabular}\end{table}
+\section*{S5. Audio event alignment: onset-window sensitivity}
+Syllables with a valid pitch track (bolero 4{,}619{,} V-pop 11,460). Audio chord change: detector label changes within the window of the syllable onset. $\Delta$: per-song level-tone difference at audio changes; genre difference with 95\% song-bootstrap CI and a permutation test of genre labels across songs (10{,}000 permutations).
+\begin{table}[H]\centering\caption{Sensitivity to the onset window.}\footnotesize
+\begin{tabular}{rccccc}\toprule Window & Bolero OR & V-pop OR & Inter.\ OR ($p$) & $\Delta$ diff [95\% CI] & Perm.\ $p$\\\midrule
+50\,ms & 1.90 [1.24, 2.90] & 1.09 [0.87, 1.38] & 1.81 (0.019) & 0.104 [0.004, 0.199] & 0.059\\
+100\,ms & 1.79 [1.25, 2.56] & 1.12 [0.94, 1.32] & 1.65 (0.019) & 0.107 [0.034, 0.178] & 0.003\\
+150\,ms & 1.53 [1.14, 2.06] & 1.17 [1.01, 1.34] & 1.35 (0.091) & 0.083 [0.017, 0.146] & 0.007\\
+200\,ms & 1.46 [1.16, 1.85] & 1.15 [1.01, 1.30] & 1.31 (0.062) & 0.079 [0.025, 0.130] & 0.004\\
+300\,ms & 1.41 [1.13, 1.76] & 1.06 [0.92, 1.21] & 1.37 (0.025) & 0.108 [0.056, 0.158] & $<0.001$\\
+\bottomrule\end{tabular}\end{table}
+Leave-one-song-out (bolero): OR range 1.45--1.65 with audio changes (150\,ms) and 2.35--2.98 with sheet changes.
+\section*{S6. Vocal--chord compatibility against empirical nulls}
+Null (a): chord track circularly shifted by a random offset of at least 10\,s; null (b): pitch frames of each syllable paired with chord frames of a random other syllable of the same song. Sign test over songs.
+\begin{table}[H]\centering\caption{Song-mean compatibility $C$ vs.\ nulls.}
+\begin{tabular}{llccc}\toprule Variant & Genre & Observed & Null & Songs above null ($p$)\\\midrule
+All frames, null (a) & Bolero & 0.463 & 0.387 & 27/29 ($7.1\times10^{-8}$)\\
+ & V-pop & 0.437 & 0.357 & 51/59 ($1.4\times10^{-8}$)\\
+All frames, null (b) & Bolero & 0.463 & 0.382 & 29/29 ($3.7\times10^{-9}$)\\
+ & V-pop & 0.437 & 0.366 & 50/59 ($3.7\times10^{-9}$)\\
+Central half, null (a) & Bolero & 0.464 & 0.387 & 26/29 ($2.0\times10^{-7}$)\\
+ & V-pop & 0.439 & 0.357 & 51/59 ($1.9\times10^{-8}$)\\
+Median pitch, null (a) & Bolero & 0.488 & 0.387 & 27/29 ($5.2\times10^{-8}$)\\
+ & V-pop & 0.454 & 0.357 & 50/59 ($7.1\times10^{-9}$)\\
+Periodicity-weighted, null (a) & Bolero & 0.467 & 0.387 & 27/29 ($5.2\times10^{-8}$)\\
+ & V-pop & 0.442 & 0.357 & 52/59 ($8.8\times10^{-9}$)\\
+\bottomrule\end{tabular}\end{table}
+\begin{table}[H]\centering\caption{Level-vs-sharp compatibility at events. Cells: mean $C$ for level / sharp syllables; DiD: bolero gap minus V-pop gap with 95\% song-bootstrap CI. ``Excess'' subtracts each syllable's null (a).}\small
+\begin{tabular}{llccc}\toprule Measure & Event & Bolero L / S & V-pop L / S & DiD [95\% CI]\\\midrule
+Raw $C$ & Chord change & 0.521 / 0.378 & 0.436 / 0.370 & +0.077 [0.002, 0.153]\\
+ & Line end & 0.611 / 0.379 & 0.534 / 0.436 & +0.134 [0.031, 0.236]\\
+Central half & Chord change & 0.532 / 0.379 & 0.439 / 0.376 & +0.090 [0.009, 0.174]\\
+ & Line end & 0.631 / 0.364 & 0.546 / 0.440 & +0.161 [0.040, 0.272]\\
+Median pitch & Chord change & 0.565 / 0.365 & 0.461 / 0.378 & +0.118 [0.011, 0.227]\\
+ & Line end & 0.700 / 0.326 & 0.581 / 0.447 & +0.241 [0.104, 0.373]\\
+Weighted & Chord change & 0.527 / 0.379 & 0.440 / 0.373 & +0.081 [0.001, 0.163]\\
+ & Line end & 0.619 / 0.382 & 0.540 / 0.438 & +0.136 [0.028, 0.233]\\
+Excess over null & Chord change & 0.112 / 0.018 & 0.073 / 0.025 & +0.046 [-0.053, 0.147]\\
+ & Line end & 0.158 / -0.001 & 0.153 / 0.070 & +0.077 [-0.044, 0.202]\\
+\bottomrule\end{tabular}\end{table}
+Per-genre level-minus-sharp excess (95\% CI): bolero at changes +0.094 [-0.001, 0.184], at line ends +0.159 [0.062, 0.271]; V-pop at changes +0.048 [0.006, 0.087], at line ends +0.083 [0.011, 0.146]. GEE three-way terms on excess: level $\times$ change $\times$ bolero +0.045 [-0.060, 0.150], $p=0.40$; level $\times$ line-final $\times$ bolero +0.064 [-0.054, 0.182], $p=0.29$.
+\end{document}
